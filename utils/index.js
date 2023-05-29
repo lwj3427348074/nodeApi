@@ -6,7 +6,7 @@ const path = require('path')
 let upload = multer({
     storage: multer.diskStorage({
         // 设置⽂件存储位置
-        destination: function(req, file, cb) {
+        destination: function (req, file, cb) {
             let date = new Date()
             let year = date.getFullYear()
             let month = (date.getMonth() + 1).toString().padStart(2, '0')
@@ -24,7 +24,7 @@ let upload = multer({
             cb(null, dir)
         },
         // 设置⽂件名称
-        filename: function(req, file, cb) {
+        filename: function (req, file, cb) {
             let fileName = Date.now() + path.extname(file.originalname)
 
             // fileName就是上传⽂件的⽂件名
